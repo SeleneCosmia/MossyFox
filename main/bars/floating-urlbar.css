@@ -4,14 +4,23 @@
 
 #urlbar:not([breakout-extend]) {
   box-shadow: 0 0 1% 2px rgba(256,256,256,0.35) !important;
-  transition: box-shadow 1s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: box-shadow 1s cubic-bezier(0.23, 1, 0.320, 1) !important;
   &:hover {
-    box-shadow: 0 0 2px 2px var(--accent-cstm);
+    box-shadow: inset 0 0 2px 2px oklch(0.8908 0.1855 111.96 / 40%) !important;
   }
 }
+
 #urlbar[breakout] {
-  transition: transform 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
   &[breakout-extend] {
+    > hbox.urlbar-input-container {
+      padding: 0px !important;
+      > #page-action-buttons,
+      > #tracking-protection-icon-container,
+      > .verifiedDomain#identity-box {
+        display: none !important;
+      }
+    }
     &:is([open]) {
       transform: translateY(36px);
       &:is([focused]) {
@@ -20,6 +29,7 @@
     }
   }
 }
+
 #urlbar[breakout-extend] {
   position: fixed !important;
   bottom: auto !important;
@@ -28,11 +38,9 @@
   z-index: 99999 !important;
 
   #urlbar-input { font-size: 21.5px !important; }
-  #urlbar-input-container, .urlbar-input-container { height: 50px !important; }
 
-  .urlbar-input-container {
-    > #page-action-buttons { display: none !important; }
-  }
+  #urlbar-input-container, .urlbar-input-container { min-height: 50px !important; }
+
   #urlbar-input-container {
     background-color: color-mix(in srgb, var(--bg-color-02) 40%, transparent 60%) !important;
     backdrop-filter: blur(12px);
@@ -47,16 +55,16 @@
     background-color: var(--bg-03) !important;
   }
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     pointer-events: none;
-    width: 100vw;
+    width: 10vmax;
     height: 100vh;
-    top: 0px;
-    left: -1vi;
+    top: 1px;
+    left: 1px;
     margin-top: 0px !important;
-    background-color: var(--bg-color-transparent) !important;
+    background-color: var(--bg-alt-transparent) !important;
     backdrop-filter: blur(16px) !important;
     transition: none !important;
     z-index: -1 !important;
@@ -70,5 +78,15 @@
       }
     }
   }
+  > .urlbarView-no-wrap {
+    position: relative;
+  }
+}
+
+#urlbar-results {
+  max-height: 800px;
+  overflow-y: auto;
+  scrollbar-color: var(--bg-01) transparent;
+  scrollbar-width: thin;
 }
 /*  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);*/

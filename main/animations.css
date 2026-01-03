@@ -1,0 +1,41 @@
+
+@keyframes squish-in {
+	60% {
+		transform: scale(.5, 1.6);
+		border-radius: 45% 45% 45% 45% / 40% 40% 40% 40%;
+	}
+  70% {
+		transform: scale(1.5, .7);
+		border-radius: 15px;
+	}
+  80% {
+		transform: scale(.9, 1.3);
+		border-radius: 25% 25% 25% 25% / 20% 20% 20% 20%;
+	}
+  85% {
+		transform: scale(1.2, .9);
+		border-radius: 15px;
+	}
+  90% {
+		transform: scale(1, 1.1);
+		border-radius: 15px;
+	}
+}
+
+/* tab closing animation via https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tab_closing_animation.css | licensed under MPL2 */
+/* This style simply makes the tab stay visible while it is being closed as well as makes the transition a bit slower */
+
+.tabbrowser-tab:not([pinned],[fadein]) {
+  transition-duration: 240ms, 240ms !important;
+  transition-timing-function: ease-out, ease-out !important;
+  visibility: visible !important;
+}
+.tab-content:not([fadein],[pinned])
+.tab-icon-pending:not([fadein]),
+.tab-icon-image:not([fadein]),
+.tab-label:not([fadein]) {
+  visibility: visible !important;
+}
+.tab-label:not([fadein]) {
+  display: flex !important;
+}

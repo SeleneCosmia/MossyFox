@@ -1,0 +1,81 @@
+@-moz-document domain("flightrising.com") {
+
+  body.onecol>div.container {
+    background-color: #322826 !important;
+    border-color: #1e1513 !important;
+    color: #e5d7d5 !important;
+
+    >#content>.contentcontainer {
+      background-color: #322826 !important;
+
+      >.leftcolumn {
+        background: linear-gradient(to-bottom, #251c1a, #322826 88%) !important;
+        color: #e5d7d5 !important;
+
+        >.content {
+          >.header > a {
+            color: #322826 !important;
+            >img {
+              filter: drop-shadow(1px 1px #1e1513) hue-rotate(69deg);
+            }
+          }
+          >a.navbar.navbar-glow-hover {
+            color: #b2bb0c !important;
+          }
+        }
+      }
+    }
+
+    >.banner>div#loginarea.loginarea {
+      color: #e5d7d5 !important;
+    }
+  }
+
+  div.breadcrumbs {
+    >a:has(+ span.tabbed-breadcrumbs) {
+      color: #e5d7d5 !important;
+    }
+
+    >span.tabbed-breadcrumbs {
+      >*:not(a) {
+        color: #c9445e !important;
+      }
+
+      >a {
+        color: #e5d7d5 !important;
+      }
+    }
+  }
+
+  div#skybanner.skybanner {
+    display: none !important;
+  }
+}
+
+@-moz-document url-prefix("https://ww1.flightrising.com/dragon/") {
+  div.main {
+    background-color: #322826 !important;
+  }
+
+  h2,
+  h3,
+  .dragon-profile-header-name {
+    color: #b2bb0c !important;
+  }
+
+  .common-tabs {
+    margin: 15px 20px 0px 20px !important;
+
+    >:is(.common-tab,
+      .common-tab-selected,
+      .common-tab:hover,
+      .common-tab-selected:hover) {
+      border: 2px solid #796D6B !important;
+      border-bottom: none !important;
+    }
+  }
+
+  div#dragon-profile-bio.dragon-profile-bio.legacy-bbcode {
+    border: 2px solid #796D6B !important;
+  }
+}

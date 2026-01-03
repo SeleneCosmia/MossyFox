@@ -1,0 +1,56 @@
+@import url("globals.css");
+
+#urlbar[breakout] {
+  max-height: var(--urlbar-min-height) !important;
+  transition: max-height 1s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  will-change: max-height;
+}
+
+#urlbar[breakout][breakout-extend] {
+  overflow: hidden !important;
+  max-height: 600px !important;
+}
+
+#urlbar, :root:has(#urlbar-searchmode-switcher[open]) #urlbar {
+  transition: all 0.3s var(--ease-slider) !important;
+  &[open] {
+    --urlbarView-separator-color: transparent !important;
+    padding-top: 3px !important;
+    & #urlbar-background,
+    & .urlbar-background {
+      box-shadow: 0.15rem 0.6rem 0.6rem -0.2rem oklch(33.2% 0.0828 51.2 / 90%) !important;
+    }
+  }
+
+  &[breakout-extend] {
+    max-width: 42vw !important;
+    position: fixed !important;
+    top: 12vh !important;
+    left: 50% !important;
+    transform: translateX(-50%) scale(1.1) !important;
+  }
+}
+
+#urlbar-results {
+  max-height: 400px !important;
+  overflow-y: auto;
+  scrollbar-color: transparent;
+  scrollbar-width: thin;
+}
+
+#urlbar .search-one-offs:not([hidden]) {
+  border-top: solid 0.2rem var(--brown) !important;
+  padding-block: 10px 5px !important;
+  max-height: 10% !important;
+  overflow-y: auto;
+  scrollbar-color: transparent;
+  scrollbar-width: thin;
+}
+
+.urlbarView-no-wrap {
+  position: relative;
+}
+
+/* Hide tracking protection icon */
+
+#trust-icon-container { display: none !important; }

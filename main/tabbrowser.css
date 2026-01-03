@@ -1,0 +1,72 @@
+@import url("../../main/globals.css");
+
+tab {
+  margin-top: 0px !important;
+}
+
+tabs#tabbrowser-tabs > #tabbrowser-arrowscrollbox[orient="vertical"] {
+  tab.tabbrowser-tab {
+    &:focus {
+      --focus-outline-color: var(--hl-02) !important;
+    }
+
+    &:not([selected="true"]) {
+      background-color: var(--fg-01) !important;
+      border-radius: 0 6pt 6pt 0 !important;
+      margin-right: 6pt !important;
+      transition: margin-right 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &[selected] {
+      background-color: var(--fg-02) !important;
+      border-radius: 0 6pt 6pt 0 !important;
+      margin-right: 0 !important;
+    }
+
+    >.tab-stack {
+      >.tab-content {
+        padding-left: 5px !important;
+
+        >.tab-label-container {
+          margin-top: -1px !important;
+          align-content: start !important;
+        }
+        >.tab-label-container > .tab-text.tab-label {
+          font-size: 10pt !important;
+        }
+
+        &:is([selected]) {
+          background-color: transparent !important;
+          color: var(--bg-color-03) !important;
+        }
+      }
+
+      >.tab-background:is([selected]) {
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+tabs#tabbrowser-tabs[orient="vertical"] {
+  --tab-inline-padding: unset !important;
+
+  .tab-background {
+    border-radius: 2px !important;
+  }
+
+  &[expanded] {
+    --tab-icon-end-margin: 2px !important;
+  }
+
+  & .tabbrowser-tab {
+    padding-block: none !important;
+    padding: unset !important;
+    margin: unset !important;
+
+    &:not([pinned]) {
+      min-width: 8ex !important;
+    }
+  }
+}
+
+

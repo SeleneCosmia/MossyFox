@@ -1,0 +1,11 @@
+@-moz-document url-prefix("https://finaloutpost.net")
+{
+  /* hides the empty ad container and the `remove ads` button below it */
+  div#main.container.text-center > div:has(+ div:not(:is(.container, .row)):is(.mt-2), > ins.adsbygoogle),
+  ins.adsbygoogle[data-adsbygoogle-status],
+  div.mt-2:has(> a.btn.btn-primary),
+  a.btn.btn-primary[href="/account/ads"]
+  {
+    display: none !important;
+  }
+}

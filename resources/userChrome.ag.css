@@ -1,0 +1,26 @@
+/* This style is loaded gloabally as agent sheet */
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@namespace html url(http://www.w3.org/1999/xhtml);
+@namespace parsererror url(http://www.mozilla.org/newlayout/xml/parsererror.xml);
+
+@media (monochrome) and (-moz-print-preview) {
+  *|*::-moz-page {
+    scrollbar-width: thin !important;
+    scrollbar-color: gray transparent !important;
+  }
+}
+
+@media print {
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: gray transparent !important;
+  }
+}
+
+/*  findbar overrides  */
+
+xul|findbar {
+  border-top: none !important;
+  background-color: var(--bg-color-02) !important;
+  transition-duration: 200ms, 200ms !important;
+}

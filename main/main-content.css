@@ -1,14 +1,27 @@
 @import url("globals.css");
 
 #tabbrowser-tabbox {
-  /* position: fixed !important; */
-  border: 10px solid var(--fg02);
   border-radius: var(--browse-round);
-  margin: 8px 12px 8px 8px !important;
+  margin: 0.2rem 12px 0.13rem 8px !important;
   box-shadow:
     0 0 0 1px color-mix(in srgb, var(--fg-02), transparent 45%),
     inset 0 0 0 1px var(--bg-03) !important;
-    /* top: 0px; bottom: 0px; left: 0px; right: 0px;  */
+
+  @media (-moz-pref: "sidebar.revamp") {
+    box-shadow: unset !important;
+    outline: none !important;
+
+    @media (-moz-pref: "sidebar.revamp.round-content-area") {
+      :root:not([inDOMFullscreen]) &[sidebar-shown] {
+        border-start-end-radius: var(--browse-round) var(--browse-round) !important;
+
+        @media (-moz-pref: "sidebar.position_start") {
+          border-start-start-radius: var(--browse-round) var(--browse-round) !important;
+          border-start-end-radius: var(--browse-round) var(--browse-round) !important;
+        }
+      }
+    }
+  }
 }
 
 html#main-window {
@@ -34,37 +47,9 @@ findbar,
     inset: 0px;
     content: "";
     position: absolute;
-    /* border: 2px solid var(--bg-color-01); */
     border-radius: var(--browse-round) !important;
     box-shadow: 0 0 0 100px var(--bg-color-02) !important;
     clip-path: inset(0) !important;
     pointer-events: none;
   }
 }
-/*  #appcontent::after {
- *  content: "";
- *  display: flex;
- *  position: fixed;
- *  right: 0px;
- *  height: 100vh;
- *  width: 33px !important;
- *  background-color: var(--bg-color-02) !important;
- *}
- */
-
-/* #main-window:not([sizemode="fullscreen"]) #appcontent browser { */
-/*   border-radius: var(--rounding) !important; */
-/*   box-shadow: */
-/*     0 0 0 20px var(--bg-color-01),  */
-/*     inset 0 0 0 2px var(--bg-color-03) !important; */
-/*   inset: 0; */
-/*   margin: 12px !important; */
-/*   clip-path: inset(0) !important; */
-/*   &::before { */
-/*     pointer-events: none; */
-/*     content: ""; */
-/*     background-color: var(--bg-color-02) !important; */
-/*     height: 100vh; */
-/*     width: 100vw; */
-/*   } */
-/* } */

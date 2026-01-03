@@ -8,8 +8,8 @@ div.wrapper {
     inset 0 0 6px 2px rgba(0,0,0,0.35),
     0 0 4px 1px rgba(256,256,256,0.35) !important;
   margin-right: 0.5vw !important;
-  padding-block: 1cqh !important;
-  padding-inline-start: 4px !important;
+  padding-block: 0.8cqh !important;
+  padding-inline-start: 0 !important;
   padding-inline-end: 8px !important;
 }
 
@@ -17,6 +17,15 @@ splitter#sidebar-splitter.chromeclass-extrachrome.sidebar-splitter {
   width: 6px !important;
   background: linear-gradient(to bottom, transparent, 20%, var(--bg-04), 80%, transparent) !important;
   border: none !important;
+}
+
+html:sidebar-main #shadow-root > div.wrapper {
+  min-width: fit-content !important;
+  max-width: 120px !important;
+}
+
+#sidebar-box {
+  min-width: fit-content !important;
 }
 
 #sidebar-header {
@@ -29,6 +38,19 @@ splitter#sidebar-splitter.chromeclass-extrachrome.sidebar-splitter {
     border-radius: 0 12px 12px 0 !important;
     border: 3px solid var(--bg-color-02) !important;
   }
+}
+
+image.tab-close-button.close-icon[role="button"] {
+  display: none !important;
+}
+
+/* group of buttons at bottom of sidebar */
+.tools-and-extensions[orientation="horizontal"] {
+  :host([expanded]) & {
+    justify-content: space-around !important;
+    padding-block-end: 0px !important;
+  }
+  margin-bottom: -15px !important;
 }
 
 /* ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ */

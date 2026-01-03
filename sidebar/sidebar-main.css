@@ -1,0 +1,60 @@
+@import url("../globals.css");
+@import url(sidebar-box.css);
+
+/* ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Tabs Sidebar ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ */
+div.wrapper {
+  background-color: var(--bg-03) !important;
+  border-radius: 0 12px 12px 0 !important;
+  box-shadow:
+    inset 0 0 6px 2px rgba(0,0,0,0.35),
+    0 0 4px 1px rgba(256,256,256,0.35) !important;
+  margin-right: 0.5vw !important;
+  padding-block-start: 0.8cqh !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 8px !important;
+}
+
+#sidebar-wrapper {
+  > #sidebar-main {
+    background-color: var(--bg-color-02) !important;
+    border-radius: 0 12px 12px 0 !important;
+    border: 3px solid var(--bg-color-02) !important;
+    /* min-width: 8ex !important; */
+    max-width: 120px !important;
+  }
+}
+
+#sidebar-header {
+  display: none !important;
+}
+
+splitter#sidebar-splitter.chromeclass-extrachrome.sidebar-splitter {
+  width: 6px !important;
+  background: linear-gradient(to bottom, transparent, 20%, var(--bg-04), 80%, transparent) !important;
+  border: none !important;
+}
+
+.sidebar-splitter {
+  --splitter-width: unset !important;
+
+  @media -moz-pref("sidebar-revamp") {
+    --splitter-width: unset !important;
+
+    @media (-moz-overlay-scrollbars) {
+      --splitter-width: 0 !important;
+    }
+  }
+}
+
+image.tab-close-button.close-icon[role="button"] {
+  display: none !important;
+}
+
+/* group of buttons at bottom of sidebar */
+.tools-and-extensions[orientation="horizontal"] {
+  :host([expanded]) & {
+    justify-content: space-around !important;
+    padding-block-end: 0px !important;
+  }
+}
+

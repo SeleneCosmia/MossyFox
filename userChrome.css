@@ -1,18 +1,12 @@
 /* load global variables first */
-@import url("chrome/globals.css");
+@import url("main/globals.css");
  /* import userChrome agent stylesheet */
 @import url("resources/userChrome.ag.css");
  /* then load everything else */
-@import url("chrome/main-content.css");
-@import url("chrome/tabbrowser.css");
-@import url("chrome/bars/urlbar.css");
-@import url("chrome/bars/sidebar.css");
-@import url("chrome/bars/floating-urlbar.css");
-@import url("chrome/devtools.css");
-
-:root {
-  --tabpanel-background-color: #00000000 !important;
-  --tab-min-height: 20px !important;
-}
-
-* { font-family: "Cartograph CF Thin" !important; }
+@import url("main/main-content.css");
+@import url("main/bars/urlbar.css");
+@import url("sidebar/tabs.css");
+@import url("sidebar/sidebar-main.css");
+@import url("main/urlbar.css");
+@import url("main/animations.css");
+@import url("main/devtools.css");

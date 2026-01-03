@@ -1,0 +1,222 @@
+@-moz-document domain("pinterest.com"),
+url-prefix("https://www.pinterest.com") {
+  :root {
+    --color-background-default: #171518 !important;
+    --color-background-box-default: #201A1E !important;
+    --color-background-neutral: #30272B !important;
+    --color-background-brand: #93131A !important;
+    --color-background-primary-base: #93131A !important;
+    --color-background-primary-strong: #880010 !important;
+    /* --color-border-container: #c2c2b6; */
+    --color-text-default:  #FFF6FC !important;
+    --color-text-subtle: #DFD6DC !important;
+    --color-icon-default: #FFF6FC !important;
+    --color-icon-subtle: #DFD6DC !important;
+    --color-icon-brand-primary: #93131A !important;
+    --color-background-button-primary-default: #93131A !important;
+    --color-background-button-primary-hover: #880010 !important;
+    --color-background-indicator: #93131A !important;
+    --color-background-popover-primary: var(--color-background-box-default) !important;
+    --color-border-default: var(--color-background-neutral);
+    /* --color-background-button-semitransparentdefault-default: ; */
+
+    .ho- {
+      border-radius: 2ex !important;
+    }
+
+    svg.Uvi {
+      color: var(--color-icon-default) !important;
+    }
+  }
+}
+@-moz-document url-prefix("https://www.pinterest.com") {
+
+  div.appContent[role="main"] > div.zI7:nth-of-type(1) {
+    padding-left: 42px !important;
+  }
+
+  /* pinterest's new vertical nav bar */
+  nav#VerticalNavContent {
+    color: var(--color-text-default) !important;
+    background-color: var(--color-background-default) !important;
+    border-right: solid 1px var(--color-background-neutral) !important;
+    width: 42px !important;
+
+    > div {
+      width: inherit;
+
+      & div.Jea.KS5.jzS.zI7 {
+        width: 42px !important;
+      }
+
+    }
+
+  }
+
+  div[data-test-id="homefeed-feed"] > div.qiB div {
+    background-color: var(--color-background-neutral) !important;
+    /* & div[data-root-margin="more-ideas-tabs"] */
+  }
+
+  /* Search Bar & Header */
+  div#HeaderContent[data-test-id="header"] {
+    left: 42px !important;
+  }
+
+  div[data-test-id="header-Header"] > div.imm.xcv.L4E.zI7[data-test-id="header-background"] {
+    background-color: var(--color-background-default) !important;
+  }
+
+  #NagHeaderContent.Nags[data-test-id="nags-container"] + div > div {
+    height: 72px !important;
+  }
+
+  div.Jea.KS5.b8T.zI7 {
+    &> div.MIw.p6V.zI7:nth-of-type(1) {
+      background: linear-gradient(to left, rgb(48, 39, 43) 51.56%, rgba(48, 39, 43, 0) 100%) !important;
+    }
+
+    &> div.MIw.Rym.zI7:nth-of-type(1) {
+      background: linear-gradient(to right, rgb(48, 39, 43) 51.56%, rgba(48, 39, 43, 0) 100%) !important;
+    }
+  }
+
+  /* Homefeed Board Suggestions Banner */
+
+  a#homefeed.nrl div.X8m.zDA.UK7.fxm.wm0,
+  a div.X8m.zDA.UK7.fxm.wm0,
+  div[data-test-id="search-suggestion-text"] {
+    color: var(--color-text-subtle) !important;
+  }
+
+  /* Search Suggestions Popup Menu */
+  div#SuggestionsMenu:has( > div[data-test-id="typeaheadResults"]) {
+    background-color: transparent !important;
+    &> div[data-test-id="typeaheadResults"] > div:first-child {
+      background-color: unset !important;
+      background: linear-gradient(to bottom, rgb(23, 21, 24) 55%, rgba(23, 21, 24, 0.8) 75%, rgba(23, 21, 24, 0.7) 90%) !important;
+      backdrop-filter: blur(6px);
+    }
+  }
+
+  div[data-test-id="recent-query"] a[href^="/search/pins/"] > div {
+    &.C7G.Jea.KS5.Lfz.XiG.haa.pXK.zI7 {
+      background-color: var(--base-color-purple-500) !important;
+      & button[aria-label="Remove"] > div > div:has(> svg) {
+        &> svg {
+          color: var(--base-color-purple-100) !important;
+        }
+      }
+    }
+    &.C7G.Jea.KS5.Lfz.TMJ.XiG.pXK.zI7 {
+      background-color: var(--base-color-hover-purple-500) !important;
+    }
+  }
+
+  /* ─────( Board Picker Popup Menu )────────────────────────────────── */
+  .XiG.DHH.kFh.V0G.ho-[aria-label="Popover"] {
+    background-color: var(--color-background-popover-primary) !important;
+    color: var(--color-text-default) !important;
+    border-radius: 1rex !important;
+    &>[data-test-id="board-picker-flyout"] {
+      background-color: color-mix(in srgb, var(--color-background-popover-primary) 65%, #4F6E12 percentage) var(--color-background-popover-primary) !important;
+    }
+    & *:not(#pickerSearchField *) {
+      color: var(--color-text-default) !important;
+    }
+  }
+    /* --> Save to profile button */
+  div.zI7:has(> div.zI7[data-test-id="boardWithoutSection"] div[data-test-id="board-row-Profile"]) {
+    display: none !important;
+  }
+
+  div[role="button"] > div[data-test-id^="board-row-"] {
+    background-color: var(--color-background-neutral) !important;
+    transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      background-color: var(--base-color-hover-purple-700) !important;
+    }
+  }
+
+  div.YoL.sLG.zI7:has(>div[data-test-id="create-board"]) {
+    border-bottom-left-radius: 1ex !important;
+    border-bottom-right-radius: 1ex !important;
+    height: 72px !important;
+    & div[data-test-id="create-board-button"] > div:first-child {
+      background-color: var(--color-background-neutral) !important;
+    }
+    & div[title="Create board"] {
+      color: var(--color-text-default) !important;
+    }
+  }
+
+  /* Floating question mark button at the bottom right of page */
+  .footerButtons[role="contentinfo"] > div:nth-of-type(1),
+  div[data-test-id="footer-more-button-container"] {
+    display: none !important;
+  }
+
+  div[data-test-id="pinWrapper"] > div > div {
+    border-radius: 2pt !important;
+  }
+}
+
+/* ---------------------- in Details Overview ---------------------- */
+@-moz-document url-prefix("https://www.pinterest.com/pin/")
+{
+  div.Closeup.Module[data-test-id="closeup-data-loaded"] {
+    max-width: calc(-200px + 100vw) !important;
+  }
+
+  div.reactCloseupScrollContainer[data-test-id="closeup-layout"] > div.zI7 > div:first-child {
+
+    &> div[data-test-id="closeup-data-loaded"] div.qiB {
+      &> div[data-test-id="back-button"] button[data-test-id="back-icon-button"] {
+        color: var(--color-icon-default) !important;
+
+        & div:has(> svg) {
+          background-color: var(--color-background-neutral) !important;
+        }
+
+      }
+    }
+  }
+
+  /* ---------- Sticky Action Toolbar on Pin Closeup Container ---------- */
+
+  div[data-test-id="closeup-action-bar"]:has( + div.zI7[data-test-id="closeup-visual-container"]) {
+    top: 72px !important;
+    background-color: var(--color-background-neutral) !important;
+  }
+
+  div[data-test-id="closeup-action-items"] {
+    color: var(--color-icon-default) !important;
+  }
+
+  div[data-test-id="closeup-body-style"],
+  div[data-test-id="closeup-body-sticky-content"] {
+    background-color: var(--color-background-box-default) !important;
+  }
+
+  div[data-test-id="closeup-body-style"] {
+    border: 1px solid var(--color-background-box-default) !important;
+    border-radius: 0.6rem !important;
+  }
+
+  div[data-test-id="product-shop-button"] > a {
+    background-color: var(--color-background-button-primary-default) !important;
+    transition: 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19) all;
+    &:hover {
+      background-color: var(--color-background-button-primary-hover) !important;
+    }
+  }
+
+  div.zI7:has( > div.xiG.zI7 > img[src^="https://i.pinimg.com/"]) {
+    border-radius: 1cap / 16pt !important;
+  }
+
+  /*  Grid Items  */
+  /* img[src^="https://i.pinimg.com/"] { */
+  /*   border-radius: 42% / 86% !important; */
+  /* } */
+}
